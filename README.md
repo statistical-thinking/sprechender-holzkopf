@@ -3,7 +3,6 @@ Ein Holzkopf auf Basis des Raspberry Pi Pico 1 / 2 und Raspberry Pi Pico 2W für
 
 ![HOLZKOPF-1](images/holzkopf_1.jpg)
 
-
 Das Ziel des Projekts ist nicht, einen fertigen Sprachassistenten für den Alltag bereitzustellen oder eine vollständig reproduzierbare Unterrichtslösung anzubieten. Vielmehr dient das System als Eisbrecher, um **Interesse an Informatik, Statistik und Künstlicher Intelligenz** zu wecken und Gespräche über Chancen und Grenzen moderner KI-Systeme anzuregen. Die Originalversion verwendet ein lokales Large Language Model via ```LM Studio``` inklusive einschlägigem RAG-System. Zum vereinfachten Einblick wird in dieser Dokumentation auf eine OpenAI API zurückgegriffen.
 
 # Autor
@@ -166,6 +165,11 @@ Status prüfen:
 ```
 sudo systemctl status voice-chatbot.service
 ```
+
+# Hard- und Software für das Gesicht
+Die Augen und der Mund werden jeweils über ein **RGB Matrix Panel** simuliert, welches von einem **Raspberry Pi Pico** angesteuert werden. Einfach die zur Verfügung gestellen Codes als ```main.pa``` auf den Raspberry Pi Pico flashen.
+
+![HOLZKOPF-2](images/holzkopf_2.jpg)
 
 # Hinweise zum Einsatz in allgemeinbildenden Schulen
 Dieses Projekt verarbeitet **Spracheingaben über die OpenAI API**. Beim Einsatz mit Kindern sollten **Datenschutz, Einwilligungen und die jeweiligen schulischen Rahmenbedingungen** berücksichtigt werden.
