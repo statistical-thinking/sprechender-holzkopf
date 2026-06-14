@@ -167,7 +167,7 @@ sudo systemctl status voice-chatbot.service
 ```
 
 # Hard- und Software für das Gesicht
-Die Augen und der Mund werden jeweils über ein **RGB Matrix Panel** simuliert, welches von einem **Raspberry Pi Pico** angesteuert werden. Einfach die zur Verfügung gestellen Codes als ```main.pa``` auf den Raspberry Pi Pico flashen.
+Die Augen und der Mund werden jeweils über ein **RGB Matrix Panel** simuliert, welches von einem **Raspberry Pi Pico** angesteuert wird. Dabei werden **verschiedene Mimiken simuliert**. Einfach die zur Verfügung gestellen Codes als ```main.py``` auf den Raspberry Pi Pico flashen.
 
 ![HOLZKOPF-2](images/holzkopf_2.jpg)
 
