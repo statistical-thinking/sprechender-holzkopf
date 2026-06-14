@@ -24,17 +24,17 @@ Das Projekt versteht sich ausdrücklich als Demonstrator und Gesprächsanlass, n
 * 3 x Waveshare RGB Full-color LED Matrix Panel (SKU 20170)
 * 1 x BerryBase USB Mini Mikrofon (EAN: 4251266751472)
 * 1 x BerryBase externer USB Mini-Lautsprecher (EAN: 6945379550159)
-* * sowie entspr. Powerbank(s), USB-Kabel, Micro-USB-auf-USB-A-Adapter und USB-Presenter
+* sowie entspr. Powerbank(s), USB-Kabel, Micro-USB-auf-USB-A-Adapter und USB-Presenter
 
 Je nach verwendeter Audiohardware müssen die ALSA-Geräte angepasst werden.
 
 # Softwarevoraussetzungen
 
 Systempakete installieren:
-
+```
 sudo apt update
 sudo apt install -y python3-pip python3-venv alsa-utils ffmpeg
-
+```
 Virtuelle Umgebung erstellen:
 
 python3 -m venv .venv
