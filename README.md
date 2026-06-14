@@ -1,18 +1,18 @@
 # Sprechender Holzkopf
-Ein Holzkopf auf Basis des Raspberry Pi Pico 1 / 2 und Raspberry Pi Pico 2W für Speech-to-Text und Text-to-Speech Anwendungen. Es wurde für ehrenamtliche Bildungsprojekte an allgemeinbildenden Schulen entwickelt, um Künstliche Intelligenz für Kinder und Jugendliche greifbar und verständlich zu machen. Das Ziel des Projekts ist nicht, einen fertigen Sprachassistenten für den Alltag bereitzustellen oder eine vollständig reproduzierbare Unterrichtslösung anzubieten. Vielmehr dient das System als Eisbrecher, um Interesse an Informatik, Statistik und Künstlicher Intelligenz zu wecken und Gespräche über Chancen und Grenzen moderner KI-Systeme anzuregen. Die Originalversion verwendet ein lokales Large Language Model via ```LM Studio``` inklusive einschlägigem RAG-System. Zum vereinfachten Einblick wird in dieser Dokumentation auf eine OpenAI API zurückgegriffen.
+Ein Holzkopf auf Basis des Raspberry Pi Pico 1 / 2 und Raspberry Pi Pico 2W für Speech-to-Text und Text-to-Speech Anwendungen. Es wurde für **ehrenamtliche Bildungsprojekte an allgemeinbildenden Schulen** entwickelt, um Künstliche Intelligenz für Kinder und Jugendliche greifbar und verständlich zu machen. Das Ziel des Projekts ist nicht, einen fertigen Sprachassistenten für den Alltag bereitzustellen oder eine vollständig reproduzierbare Unterrichtslösung anzubieten. Vielmehr dient das System als Eisbrecher, um **Interesse an Informatik, Statistik und Künstlicher Intelligenz** zu wecken und Gespräche über Chancen und Grenzen moderner KI-Systeme anzuregen. Die Originalversion verwendet ein lokales Large Language Model via ```LM Studio``` inklusive einschlägigem RAG-System. Zum vereinfachten Einblick wird in dieser Dokumentation auf eine OpenAI API zurückgegriffen.
 
 # Autor
 Prof. Dr. habil. Dennis Klinkhammer
 
 # Pädagogische Motivation
-Viele Kinder kennen Künstliche Intelligenz lediglich als abstraktes Konzept oder aus kommerziellen Anwendungen. Dieses Projekt soll zeigen, dass KI-Systeme aus nachvollziehbaren technischen Komponenten bestehen und von Menschen entwickelt werden. Der Raspberry Pi macht die Technik sichtbar und greifbar. Dadurch entstehen natürliche Gesprächsanlässe, beispielsweise:
+Viele Kinder kennen **Künstliche Intelligenz lediglich als abstraktes Konzept** oder aus kommerziellen Anwendungen. Dieses Projekt soll zeigen, dass KI-Systeme aus **nachvollziehbaren technischen Komponenten** bestehen und **von Menschen entwickelt** werden. Der Raspberry Pi macht die Technik sichtbar und greifbar. Dadurch entstehen natürliche Gesprächsanlässe, beispielsweise:
 
 * Wie funktioniert Spracherkennung?
 * Was passiert mit den gesprochenen Fragen?
 * Können KI-Systeme Fehler machen?
 * Warum sollten Menschen die Ergebnisse von KI-Systemen kritisch hinterfragen?
 
-Das Projekt versteht sich ausdrücklich als Demonstrator und Gesprächsanlass, nicht als Unterrichtsgegenstand oder fertige Unterrichtslösung.
+Das Projekt versteht sich ausdrücklich als **Demonstrator** und Gesprächsanlass, **nicht als Unterrichtsgegenstand** oder fertige Unterrichtslösung.
 
 # Benötigte Hardware
 * 2 x Raspberry Pi Pico 1 / 2
@@ -163,8 +163,8 @@ sudo systemctl status voice-chatbot.service
 ```
 
 # Hinweise zum Einsatz in allgemeinbildenden Schulen
-Dieses Projekt verarbeitet Spracheingaben über die OpenAI API. Beim Einsatz mit Kindern sollten Datenschutz, Einwilligungen und die jeweiligen schulischen Rahmenbedingungen berücksichtigt werden.
+Dieses Projekt verarbeitet **Spracheingaben über die OpenAI API**. Beim Einsatz mit Kindern sollten **Datenschutz, Einwilligungen und die jeweiligen schulischen Rahmenbedingungen** berücksichtigt werden.
 
-Der Assistent ist daher extra nicht als dauerhaft zuhörendes System konzipiert. Die Aufnahme erfolgt ausschließlich nach einer bewussten Aktivierung durch den USB-Presenter. Eine lokale und datenschutzkinforme Variante ist über ein lokales Large Language Model via ```LM Studio``` möglich und erfordert einen Raspberry Pi 5 mit 16 GB Arbeitsspeicher.
+Der Assistent ist daher **extra nicht als dauerhaft zuhörendes System konzipiert**. Die Aufnahme erfolgt **ausschließlich nach einer bewussten Aktivierung** durch den USB-Presenter. Eine lokale und datenschutzkinforme Variante ist über ein lokales Large Language Model via ```LM Studio``` möglich und erfordert einen Raspberry Pi 5 mit 16 GB Arbeitsspeicher.
 
-KI-Systeme können fehlerhafte oder unvollständige Antworten erzeugen. Dies kann im Bildungskontext als Anlass genutzt werden, die Grenzen und Risiken von KI-Systemen zu diskutieren.
+**KI-Systeme können fehlerhafte oder unvollständige Antworten erzeugen**. Dies kann im Bildungskontext als Anlass genutzt werden, die Grenzen und Risiken von KI-Systemen zu diskutieren.
