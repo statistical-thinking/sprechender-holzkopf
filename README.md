@@ -47,5 +47,5 @@ pip install openai python-dotenv evdev
 Zusätzlich werden folgende Programme verwendet:
 
 * ```arecord``` für die Audioaufnahme
-* 'aplay' für die Audioausgabe
-* 'ffmpeg' zur Umwandlung der erzeugten MP3-Dateien in WAV-Dateien
+* ```aplay``` für die Audioausgabe
+* ```ffmpeg``` zur Umwandlung der erzeugten MP3-Dateien in WAV-Dateien
