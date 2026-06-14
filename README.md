@@ -1,5 +1,5 @@
 # Sprechender Holzkopf
-Ein Holzkopf mit Mimik auf Basis des Raspberry Pi Pico 1 / 2 und Raspberry Pi Pico 2W für Speech-to-Text und Text-to-Speech Anwendungen.
+Ein Holzkopf auf Basis des Raspberry Pi Pico 1 / 2 und Raspberry Pi Pico 2W für Speech-to-Text und Text-to-Speech Anwendungen.
 
 # Autor
 Prof. Dr. habil. Dennis Klinkhammer
