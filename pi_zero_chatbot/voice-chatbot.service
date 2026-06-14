@@ -1,0 +1,24 @@
+[Unit]
+Description=Voice Chatbot
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+
+User=[YOUR_USERNAME]
+Group=[YOUR_USERNAME]
+
+WorkingDirectory=/home/[YOUR_USERNAME]/pi-voice-chatbot
+EnvironmentFile=/home/[YOUR_USERNAME]/pi-voice-chatbot/.env
+
+ExecStart=/home/[YOUR_USERNAME]/pi-voice-chatbot/.venv/bin/python /home/[YOUR_USERNAME]/pi-voice-chatbot/voice_chatbot.py
+
+Restart=on-failure
+RestartSec=10
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
