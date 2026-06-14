@@ -1,5 +1,5 @@
 # Sprechender Holzkopf
-Ein Holzkopf auf Basis des Raspberry Pi Pico 1 / 2 und Raspberry Pi Pico 2W für Speech-to-Text und Text-to-Speech Anwendungen. Es wurde für ehrenamtliche Bildungsprojekte an allgemeinbildenden Schulen entwickelt, um Künstliche Intelligenz für Kinder und Jugendliche greifbar und verständlich zu machen. Das Ziel des Projekts ist nicht, einen fertigen Sprachassistenten für den Alltag bereitzustellen oder eine vollständig reproduzierbare Unterrichtslösung anzubieten. Vielmehr dient das System als Eisbrecher, um Interesse an Informatik, Statistik und Künstlicher Intelligenz zu wecken und Gespräche über Chancen und Grenzen moderner KI-Systeme anzuregen.
+Ein Holzkopf auf Basis des Raspberry Pi Pico 1 / 2 und Raspberry Pi Pico 2W für Speech-to-Text und Text-to-Speech Anwendungen. Es wurde für ehrenamtliche Bildungsprojekte an allgemeinbildenden Schulen entwickelt, um Künstliche Intelligenz für Kinder und Jugendliche greifbar und verständlich zu machen. Das Ziel des Projekts ist nicht, einen fertigen Sprachassistenten für den Alltag bereitzustellen oder eine vollständig reproduzierbare Unterrichtslösung anzubieten. Vielmehr dient das System als Eisbrecher, um Interesse an Informatik, Statistik und Künstlicher Intelligenz zu wecken und Gespräche über Chancen und Grenzen moderner KI-Systeme anzuregen. Die Originalversion verwendet ein lokales Large Language Model via ```LM Studio``` inklusive einschlägigem RAG-System. Zum vereinfachten Einblick wird in dieser Dokumentation auf eine OpenAI API zurückgegriffen.
 
 # Autor
 Prof. Dr. habil. Dennis Klinkhammer
@@ -7,10 +7,10 @@ Prof. Dr. habil. Dennis Klinkhammer
 # Pädagogische Motivation
 Viele Kinder kennen Künstliche Intelligenz lediglich als abstraktes Konzept oder aus kommerziellen Anwendungen. Dieses Projekt soll zeigen, dass KI-Systeme aus nachvollziehbaren technischen Komponenten bestehen und von Menschen entwickelt werden. Der Raspberry Pi macht die Technik sichtbar und greifbar. Dadurch entstehen natürliche Gesprächsanlässe, beispielsweise:
 
-Wie funktioniert Spracherkennung?
-Was passiert mit den gesprochenen Fragen?
-Können KI-Systeme Fehler machen?
-Warum sollten Menschen die Ergebnisse von KI-Systemen kritisch hinterfragen?
+* Wie funktioniert Spracherkennung?
+* Was passiert mit den gesprochenen Fragen?
+* Können KI-Systeme Fehler machen?
+* Warum sollten Menschen die Ergebnisse von KI-Systemen kritisch hinterfragen?
 
 Das Projekt versteht sich ausdrücklich als Demonstrator und Gesprächsanlass, nicht als Unterrichtsgegenstand oder fertige Unterrichtslösung.
 
@@ -27,7 +27,6 @@ Das Projekt versteht sich ausdrücklich als Demonstrator und Gesprächsanlass, n
 Je nach verwendeter Audiohardware müssen die ALSA-Geräte angepasst werden.
 
 # Softwarevoraussetzungen
-
 Systempakete installieren:
 ```
 sudo apt update
@@ -47,3 +46,81 @@ Zusätzlich werden folgende Programme verwendet:
 * ```arecord``` für die Audioaufnahme
 * ```aplay``` für die Audioausgabe
 * ```ffmpeg``` zur Umwandlung der erzeugten MP3-Dateien in WAV-Dateien
+
+# OpenAI API konfigurieren
+Im Projektverzeichnis eine Datei .env anlegen:
+```
+nano .env
+```
+Inhalt:
+```
+OPENAI_API_KEY=[EIGENER_API_SCHLÜSSEL]
+```
+
+# Audio-Geräte konfigurieren
+Die Audio-Geräte werden im Python-Skript explizit definiert:
+```
+RECORDING_DEVICE = "plughw:0,0"
+PLAYBACK_DEVICE = "plughw:1,0"
+```
+Diese Werte müssen gegebenenfalls an die verwendete Hardware angepasst werden.
+
+Aufnahmegeräte anzeigen:
+```
+arecord -l
+```
+Wiedergabegeräte anzeigen:
+```
+aplay -l
+```
+Testaufnahme durchführen:
+```
+arecord -D plughw:0,0 -f cd -t wav -d 5 test.wav
+```
+Testwiedergabe durchführen:
+```
+aplay -D plughw:1,0 test.wav
+```
+
+# USB-Presenter konfigurieren
+Die Eingabe erfolgt über einen USB-Presenter, der über evdev als Eingabegerät erkannt wird.
+
+Aktuell werden folgende Tastencodes unterstützt:
+```
+VALID_KEYS = {
+    "KEY_PAGEDOWN",
+    "KEY_RIGHT",
+    "KEY_ENTER",
+    "KEY_SPACE",
+}
+```
+Damit der Benutzer auf die Eingabegeräte zugreifen kann:
+```
+sudo usermod -aG input [BENUTZERNAME]
+sudo reboot
+```
+Zur Analyse der erkannten Tastencodes:
+```
+sudo evtest
+```
+
+# Signalton konfigurieren
+Vor Beginn der Aufnahme wird ein kurzer Signalton abgespielt:
+```
+BEEP_FILE = PROJECT_DIR / "r2d2_beep.wav"
+```
+Dieser signalisiert dem Nutzer den Beginn der Aufnahme.
+
+Falls der Signalton zu laut ist, kann eine leisere Version erzeugt werden:
+```
+ffmpeg -y -i r2d2_beep.wav -filter:a "volume=0.35" r2d2_beep_quiet.wav
+```
+Anschließend den Dateinamen im Python-Skript anpassen.
+
+# Automatischer Start beim Booten
+Der Sprachassistent kann automatisch nach dem Start des Raspberry Pi ausgeführt werden.
+
+Datei anlegen:
+```
+sudo nano /etc/systemd/system/voice-chatbot.service
+```
