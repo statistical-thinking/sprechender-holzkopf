@@ -5,9 +5,7 @@ Ein Holzkopf auf Basis des Raspberry Pi Pico 1 / 2 und Raspberry Pi Pico 2W für
 Prof. Dr. habil. Dennis Klinkhammer
 
 # Pädagogische Motivation
-Viele Kinder kennen Künstliche Intelligenz lediglich als abstraktes Konzept oder aus kommerziellen Anwendungen. Dieses Projekt soll zeigen, dass KI-Systeme aus nachvollziehbaren technischen Komponenten bestehen und von Menschen entwickelt werden.
-
-Der Raspberry Pi macht die Technik sichtbar und greifbar. Dadurch entstehen natürliche Gesprächsanlässe, beispielsweise:
+Viele Kinder kennen Künstliche Intelligenz lediglich als abstraktes Konzept oder aus kommerziellen Anwendungen. Dieses Projekt soll zeigen, dass KI-Systeme aus nachvollziehbaren technischen Komponenten bestehen und von Menschen entwickelt werden. Der Raspberry Pi macht die Technik sichtbar und greifbar. Dadurch entstehen natürliche Gesprächsanlässe, beispielsweise:
 
 Wie funktioniert Spracherkennung?
 Was passiert mit den gesprochenen Fragen?
