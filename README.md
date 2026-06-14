@@ -1,5 +1,10 @@
 # Sprechender Holzkopf
-Ein Holzkopf auf Basis des Raspberry Pi Pico 1 / 2 und Raspberry Pi Pico 2W für Speech-to-Text und Text-to-Speech Anwendungen. Es wurde für **ehrenamtliche Bildungsprojekte an allgemeinbildenden Schulen** entwickelt, um Künstliche Intelligenz für Kinder und Jugendliche greifbar und verständlich zu machen. Das Ziel des Projekts ist nicht, einen fertigen Sprachassistenten für den Alltag bereitzustellen oder eine vollständig reproduzierbare Unterrichtslösung anzubieten. Vielmehr dient das System als Eisbrecher, um **Interesse an Informatik, Statistik und Künstlicher Intelligenz** zu wecken und Gespräche über Chancen und Grenzen moderner KI-Systeme anzuregen. Die Originalversion verwendet ein lokales Large Language Model via ```LM Studio``` inklusive einschlägigem RAG-System. Zum vereinfachten Einblick wird in dieser Dokumentation auf eine OpenAI API zurückgegriffen.
+Ein Holzkopf auf Basis des Raspberry Pi Pico 1 / 2 und Raspberry Pi Pico 2W für Speech-to-Text und Text-to-Speech Anwendungen. Es wurde für **ehrenamtliche Bildungsprojekte an allgemeinbildenden Schulen** entwickelt, um Künstliche Intelligenz für Kinder und Jugendliche greifbar und verständlich zu machen.
+
+![HOLZKOPF-1](images/holzkopf-1.jpg)
+
+
+Das Ziel des Projekts ist nicht, einen fertigen Sprachassistenten für den Alltag bereitzustellen oder eine vollständig reproduzierbare Unterrichtslösung anzubieten. Vielmehr dient das System als Eisbrecher, um **Interesse an Informatik, Statistik und Künstlicher Intelligenz** zu wecken und Gespräche über Chancen und Grenzen moderner KI-Systeme anzuregen. Die Originalversion verwendet ein lokales Large Language Model via ```LM Studio``` inklusive einschlägigem RAG-System. Zum vereinfachten Einblick wird in dieser Dokumentation auf eine OpenAI API zurückgegriffen.
 
 # Autor
 Prof. Dr. habil. Dennis Klinkhammer
