@@ -124,3 +124,47 @@ Datei anlegen:
 ```
 sudo nano /etc/systemd/system/voice-chatbot.service
 ```
+Inhalt:
+```
+[Unit]
+Description=Voice Chatbot
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+
+User=[BENUTZERNAME]
+Group=[BENUTZERNAME]
+
+WorkingDirectory=/home/[BENUTZERNAME]/pi-voice-chatbot
+EnvironmentFile=/home/[BENUTZERNAME]/pi-voice-chatbot/.env
+
+ExecStart=/home/[BENUTZERNAME]/pi-voice-chatbot/.venv/bin/python /home/[BENUTZERNAME]/pi-voice-chatbot/voice_chatbot.py
+
+Restart=on-failure
+RestartSec=10
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+```
+Service aktivieren:
+```
+sudo systemctl daemon-reload
+sudo systemctl enable voice-chatbot.service
+sudo systemctl start voice-chatbot.service
+```
+Status prüfen:
+```
+sudo systemctl status voice-chatbot.service
+```
+
+# Hinweise zum Einsatz in allgemeinbildenden Schulen
+Dieses Projekt verarbeitet Spracheingaben über die OpenAI API. Beim Einsatz mit Kindern sollten Datenschutz, Einwilligungen und die jeweiligen schulischen Rahmenbedingungen berücksichtigt werden.
+
+Der Assistent ist daher extra nicht als dauerhaft zuhörendes System konzipiert. Die Aufnahme erfolgt ausschließlich nach einer bewussten Aktivierung durch den USB-Presenter. Eine lokale und datenschutzkinforme Variante ist über ein lokales Large Language Model via ```LM Studio``` möglich und erfordert einen Raspberry Pi 5 mit 16 GB Arbeitsspeicher.
+
+KI-Systeme können fehlerhafte oder unvollständige Antworten erzeugen. Dies kann im Bildungskontext als Anlass genutzt werden, die Grenzen und Risiken von KI-Systemen zu diskutieren.
