@@ -36,14 +36,14 @@ sudo apt update
 sudo apt install -y python3-pip python3-venv alsa-utils ffmpeg
 ```
 Virtuelle Umgebung erstellen:
-
+```
 python3 -m venv .venv
 source .venv/bin/activate
-
+```
 Benötigte Python-Pakete installieren:
-
+```
 pip install openai python-dotenv evdev
-
+```
 Zusätzlich werden folgende Programme verwendet:
 
 arecord für die Audioaufnahme
